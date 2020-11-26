@@ -1,0 +1,161 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  /* background-color: #5d4954; -- no background color until scrolling happens or small display used */
+  color: rgb(226, 226, 226);
+  transition: background 0.5s;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-shadow: 0px 3px 2px rgba(104, 104, 104, 0.8),
+    0px 12px 18px rgba(152, 152, 152, 0.4);
+}
+
+.logo {
+  font-family: "Pacifico", cursive;
+  font-size: 2em;
+}
+
+.nav-items {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  cursor: pointer;
+}
+
+.nav-items a {
+  text-decoration: none;
+}
+
+.nav-items li {
+  list-style: none;
+}
+.nav-scroll {
+  background-color: #5d4954;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger div {
+  background-color: rgb(226, 226, 226);
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  .nav-items {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    overflow-x: hidden;
+  }
+  nav {
+    background-color: #5d4954;
+  }
+  .nav-items {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #5d4954;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* have nav items populate menu one by one */
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-items li {
+    opacity: 0;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* START MENU TRANSITION */
+.nav-active {
+  width: 50%;
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* Once burger is clicked, change it into "X" */
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* END MENU TRANSITION */
+
+.container {
+  font-family: "Roboto", sans-serif;
+}
+
+.home {
+  padding-top: 10vh;
+  background-image: url(img/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-card {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+  color: #f5f5f5;
+  height: 40%;
+  margin: 30px;
+  padding: 15px;
+  text-shadow: 0px 3px 2px rgba(104, 104, 104, 0.8),
+    0px 12px 18px rgba(152, 152, 152, 0.4);
+}
+
+#quote-author {
+  font-family: "Pacifico", cursive;
+  font-size: 0.6em;
+  color: #fff0f5;
+}
+
+h2 {
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  margin-top: 30px;
+}
