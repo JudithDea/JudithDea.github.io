@@ -125,6 +125,7 @@ nav {
   font-family: "Roboto", sans-serif;
   color: rgb(226, 226, 226);
   background: #2c3e4c;
+  padding: 5%;
 }
 
 .container a {
@@ -132,6 +133,7 @@ nav {
 }
 
 .home {
+  font-family: "Roboto", sans-serif;
   padding-top: 10vh;
   background-image: url(img/background.jpg);
   background-size: cover;
@@ -143,7 +145,11 @@ nav {
   justify-content: center;
 }
 
-.home-card {
+.home a {
+  padding-top: 50vh;
+}
+
+.home-quote {
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -169,10 +175,125 @@ h3 {
   padding-top: 30px;
 }
 
+h2 {
+  font-size: 2.5em;
+  margin-top: 50px;
+}
+
+h2 a {
+  padding-top: 60px;
+}
+
+h4 {
+  font-family: "Pacifico", cursive;
+  margin-top: 0;
+  color: #484848;
+  text-align: center;
+}
+
 .about {
   margin-top: 0;
 }
 
-.about-description a {
+.about-description {
+  padding-bottom: 50px;
+}
+
+.about-description,
+.contact {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+.about-description a,
+.contact p a {
   color: #f7d9e3;
+}
+
+.skills {
+  background: #fff;
+  text-align: center;
+  color: #484848;
+  max-width: 460px;
+  margin: auto;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.skills li {
+  list-style: none;
+  font-size: 1em;
+}
+
+.skills ul {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.skills img {
+  max-height: 150px;
+  border-radius: 4px;
+  padding-top: 15px;
+}
+
+.project-container {
+  /* position: relative; */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #2c3e4c;
+}
+
+.projects h2 {
+}
+
+.project-container .card {
+  /* position: relative; */
+  max-width: 300px;
+  height: 350px;
+  background: #fff;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+
+.project-container .card:hover {
+  height: 100%;
+}
+
+.project-container .card .project-image {
+  max-width: 260px;
+  height: 260px;
+  box-shadow: 0 5px 20px rbga(0, 0, 0, 0.2);
+  margin: auto;
+}
+
+.project-container .card .project-image img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.project-container .card .project-content {
+  padding-top: 50px;
+  color: #484848;
+  text-align: center;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.project-content a {
+  color: #5d4954;
+}
+
+/* make card text visible when hovering */
+.project-container .card:hover .project-content {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
 }
