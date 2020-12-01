@@ -2,18 +2,22 @@ const nav = document.querySelector(".nav-items");
 const navItems = document.querySelectorAll(".nav-items li");
 const hamburger = document.querySelector(".hamburger");
 
+function navItemSlides() {
+    navItems.forEach((item, index) => {
+        if(item.style.animation){
+            item.style.animation = "";
+        } else {
+            item.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.4}s`;
+        }
+    });
+}
+
 const navSlide = () => {
     hamburger.addEventListener("click", () => {
         // slide out nav bar
         nav.classList.toggle("nav-active");
         // populate links, reset animation every time menu is opened
-        navItems.forEach((item, index) => {
-            if(item.style.animation){
-                item.style.animation = "";
-            } else {
-                item.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.4}s`;
-            }
-        });
+        navItemSlides();
         // turn hamburger into "X" when clicked
         hamburger.classList.toggle("toggle");
     })   
@@ -37,12 +41,6 @@ for (i = 0; i < navItems.length; i++) {
     navItems[i].addEventListener("click", () => {
         nav.classList.toggle("nav-active");
         hamburger.classList.toggle("toggle");
-        navItems.forEach((item, index) => {
-            if(item.style.animation){
-                item.style.animation = "";
-            } else {
-                item.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.4}s`;
-            }
-        });
+        navItemSlides();
     });
 }

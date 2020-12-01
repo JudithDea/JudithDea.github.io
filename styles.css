@@ -298,3 +298,7 @@ h4 {
   opacity: 1;
   transition-delay: 0.2s;
 }
+
+.contact {
+  padding-bottom: 40vh;
+}
