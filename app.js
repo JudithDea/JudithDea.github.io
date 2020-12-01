@@ -1,9 +1,8 @@
-const navSlide = () => {
-    const hamburger = document.querySelector(".hamburger");
-    const nav = document.querySelector(".nav-items");
-    const navItems = document.querySelectorAll(".nav-items li");
-    const navAll = document.querySelectorAll(".navLi");
+const nav = document.querySelector(".nav-items");
+const navItems = document.querySelectorAll(".nav-items li");
+const hamburger = document.querySelector(".hamburger");
 
+const navSlide = () => {
     hamburger.addEventListener("click", () => {
         // slide out nav bar
         nav.classList.toggle("nav-active");
@@ -17,9 +16,7 @@ const navSlide = () => {
         });
         // turn hamburger into "X" when clicked
         hamburger.classList.toggle("toggle");
-    })
-
-    
+    })   
 }
 
 navSlide();
@@ -33,3 +30,19 @@ window.addEventListener("scroll", () => {
         nav.classList.remove("nav-scroll");
     }
 } )
+
+
+// to make Navbar slide back in after clicking nav items
+for (i = 0; i < navItems.length; i++) {
+    navItems[i].addEventListener("click", () => {
+        nav.classList.toggle("nav-active");
+        hamburger.classList.toggle("toggle");
+        navItems.forEach((item, index) => {
+            if(item.style.animation){
+                item.style.animation = "";
+            } else {
+                item.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.4}s`;
+            }
+        });
+    });
+}
