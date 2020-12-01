@@ -2,6 +2,7 @@ const navSlide = () => {
     const hamburger = document.querySelector(".hamburger");
     const nav = document.querySelector(".nav-items");
     const navItems = document.querySelectorAll(".nav-items li");
+    const navAll = document.querySelectorAll(".navLi");
 
     hamburger.addEventListener("click", () => {
         // slide out nav bar
@@ -17,9 +18,12 @@ const navSlide = () => {
         // turn hamburger into "X" when clicked
         hamburger.classList.toggle("toggle");
     })
+
+    
 }
 
 navSlide();
+
 
 window.addEventListener("scroll", () => {
     const nav = document.querySelector("nav");
